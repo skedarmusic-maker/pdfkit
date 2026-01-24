@@ -10,10 +10,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://interview.softenglish.com.br"),
   title: "The Ultimate English Interview Kit | Domine sua Entrevista Internacional",
   description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. O único método com App de Scripts Blindados.",
   verification: {
     google: "cqHXJbW7tHTrUSFgp69J2FJwrV7STU5DXsUF3-JPu3s",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
