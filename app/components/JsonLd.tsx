@@ -83,6 +83,21 @@ const JsonLd = () => {
                         "shippingDestination": {
                             "@type": "DefinedRegion",
                             "addressCountry": "BR"
+                        },
+                        "deliveryTime": {
+                            "@type": "ShippingDeliveryTime",
+                            "handlingTime": {
+                                "@type": "QuantitativeValue",
+                                "minValue": 0,
+                                "maxValue": 0,
+                                "unitCode": "DAY"
+                            },
+                            "transitTime": {
+                                "@type": "QuantitativeValue",
+                                "minValue": 0,
+                                "maxValue": 0,
+                                "unitCode": "DAY"
+                            }
                         }
                     }
                 },
