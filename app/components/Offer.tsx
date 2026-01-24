@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Star, Lock, Smartphone, ShieldCheck, Shield } from "lucide-react";
+import { Check, Star, Lock, Smartphone, ShieldCheck, Shield, ArrowRight } from "lucide-react";
 
 export default function Offer() {
     const products = [
@@ -74,9 +74,10 @@ export default function Offer() {
                                     href="https://pay.kiwify.com.br/L0AzUvb"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block w-full bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all transform hover:-translate-y-1 mb-6"
+                                    className="relative z-10 flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all transform hover:-translate-y-1 mb-6 cursor-pointer"
                                 >
                                     QUERO MINHA APROVAÇÃO AGORA
+                                    <ArrowRight className="w-6 h-6" />
                                 </a>
 
                                 <div className="flex items-center gap-2 text-xs text-gray-500">
