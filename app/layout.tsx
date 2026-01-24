@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <head>
+      <body
+        className={`${outfit.variable} antialiased`}
+      >
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -29,10 +31,6 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-K4CSQ8B6');`}
         </Script>
-      </head>
-      <body
-        className={`${outfit.variable} antialiased`}
-      >
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K4CSQ8B6"
