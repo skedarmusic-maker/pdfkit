@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import JsonLd from "./components/JsonLd";
 
 const outfit = Outfit({
   variable: "--font-geist-sans",
@@ -18,6 +19,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "The Ultimate English Interview Kit",
+    description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. Acesso imediato.",
+    url: "https://interview.softenglish.com.br",
+    siteName: "The Ultimate English Interview Kit",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Ultimate English Interview Kit",
+    description: "Prepare-se para entrevistas em inglês em 10 minutos.",
   },
 };
 
@@ -62,6 +76,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <JsonLd />
         {children}
       </body>
     </html>
