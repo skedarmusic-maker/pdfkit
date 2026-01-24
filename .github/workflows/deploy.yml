@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -22,8 +23,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/          # Ajustado para ./out/ pois é o padrão do Next.js
-          server-dir: ./public_html/
+          local-dir: ./out/
+          server-dir: public_html/
           protocol: ftp
-          state-name: .deploy-history-vfinal.json
           log-level: verbose
