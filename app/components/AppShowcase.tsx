@@ -55,9 +55,12 @@ export default function AppShowcase() {
                                         </div>
                                     </div>
                                     <div className="pt-4">
-                                        <button className="w-full h-12 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-bold transition-colors shadow-lg shadow-purple-900/20">
+                                        <a
+                                            href="#offer"
+                                            className="w-full h-12 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-bold transition-colors shadow-lg shadow-purple-900/20 flex items-center justify-center"
+                                        >
                                             Gerar Script "Tell Me About Yourself"
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
