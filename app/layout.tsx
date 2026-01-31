@@ -12,7 +12,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://interview.softenglish.com.br"),
+  metadataBase: new URL("https://kit.softenglish.com.br"),
   title: "The Ultimate English Interview Kit | Domine sua Entrevista Internacional",
   description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. O único método com App de Scripts Blindados.",
   verification: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Ultimate English Interview Kit",
     description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. Acesso imediato.",
-    url: "https://interview.softenglish.com.br",
+    url: "https://kit.softenglish.com.br",
     siteName: "The Ultimate English Interview Kit",
     locale: "pt_BR",
     type: "website",

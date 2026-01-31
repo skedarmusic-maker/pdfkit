@@ -37,12 +37,12 @@ const JsonLd = () => {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://interview.softenglish.com.br/#organization",
+                "@id": "https://kit.softenglish.com.br/#organization",
                 "name": "SoftEnglish",
-                "url": "https://interview.softenglish.com.br",
+                "url": "https://kit.softenglish.com.br",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://interview.softenglish.com.br/favicon.ico",
+                    "url": "https://kit.softenglish.com.br/favicon.ico",
                     "width": 512,
                     "height": 512
                 },
@@ -53,7 +53,7 @@ const JsonLd = () => {
                 "name": "The Ultimate English Interview Kit",
                 "description": "Domine sua entrevista internacional. Prepare-se em 10 minutos sem decoreba e sem travar usando o único método com App de Scripts Blindados.",
                 "image": "https://vz-5af29887-36d.b-cdn.net/90b4a2ad-9a65-4179-8b32-69679527e1fa/thumbnail_9934a3ac.jpg",
-                "url": "https://interview.softenglish.com.br",
+                "url": "https://kit.softenglish.com.br",
                 "brand": {
                     "@type": "Brand",
                     "name": "SoftEnglish"
@@ -63,7 +63,7 @@ const JsonLd = () => {
                     "price": "47.00",
                     "priceCurrency": "BRL",
                     "availability": "https://schema.org/InStock",
-                    "url": "https://pay.kiwify.com.br/L0AzUvb",
+                    "url": "https://pay.kiwify.com.br/HfQu60H",
                     "priceValidUntil": "2026-12-31",
                     "hasMerchantReturnPolicy": {
                         "@type": "MerchantReturnPolicy",
