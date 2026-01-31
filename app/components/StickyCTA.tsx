@@ -45,7 +45,7 @@ export default function StickyCTA() {
                     className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-neutral-900/90 backdrop-blur-md border-t border-white/10 md:hidden pb-safe"
                 >
                     <a
-                        href="https://pay.kiwify.com.br/L0AzUvb?sck=sticky"
+                        href="https://pay.kiwify.com.br/HfQu60H?sck=sticky"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {

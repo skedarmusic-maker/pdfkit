@@ -55,7 +55,7 @@ export default function Offer() {
                                 </div>
 
                                 <a
-                                    href="https://pay.kiwify.com.br/L0AzUvb?sck=offer"
+                                    href="https://pay.kiwify.com.br/HfQu60H?sck=offer"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => {
