@@ -34,4 +34,4 @@ jobs:
           server-dir: ./public_html/
           protocol: ftp
           port: 21
-          security: loose
+          security: loose # SSL Security fix for Hostinger
