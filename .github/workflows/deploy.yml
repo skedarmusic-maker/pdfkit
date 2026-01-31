@@ -35,3 +35,7 @@ jobs:
           protocol: ftp
           port: 21
           security: loose # SSL Security fix for Hostinger
+          exclude: |
+            **/.trash/
+            **/.well-known/
+            **/public_html/
