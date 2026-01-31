@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Headphones, Smartphone, MessageCircle } from "lucide-react";
+import { Smartphone, CheckCircle } from "lucide-react";
 
 // The images for the carousel on the first card
 const carouselImages = [
@@ -37,18 +37,18 @@ export default function Deliverables() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-                    {/* Item 1: The Book Carousel (Large Card) */}
+                    {/* Item 1: The Book Carousel (Focus on PDFs) */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="md:col-span-1 row-span-2 relative bg-neutral-900 rounded-3xl p-8 border border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all flex flex-col"
+                        className="relative bg-neutral-900 rounded-3xl p-8 border border-white/10 overflow-hidden group hover:border-purple-500/50 transition-all flex flex-col h-full"
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[60px] rounded-full pointer-events-none" />
 
-                        <div className="w-full h-[300px] md:h-auto md:flex-1 flex items-center justify-center mb-6 relative z-10">
+                        <div className="w-full h-[300px] flex items-center justify-center mb-8 relative z-10">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={currentImageIndex}
@@ -63,7 +63,7 @@ export default function Deliverables() {
                                         alt={`Product ${currentImageIndex + 1}`}
                                         width={300}
                                         height={400}
-                                        className="w-auto h-full max-h-[300px] drop-shadow-2xl object-contain"
+                                        className="w-auto h-full max-h-[280px] drop-shadow-2xl object-contain hover:scale-105 transition-transform duration-500"
                                         unoptimized
                                     />
                                 </motion.div>
@@ -72,7 +72,7 @@ export default function Deliverables() {
 
                         <div className="relative z-10 mt-auto">
                             {/* Slide Indicators */}
-                            <div className="flex justify-center gap-2 mb-4">
+                            <div className="flex justify-center gap-2 mb-6">
                                 {carouselImages.map((_, i) => (
                                     <div
                                         key={i}
@@ -80,91 +80,67 @@ export default function Deliverables() {
                                     />
                                 ))}
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-3">The Ultimate Kit</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
-                                Não é apenas um livro. É o arsenal completo: Guias, Scripts e Protocolos de Aprovação.
-                            </p>
+                            <h3 className="text-2xl font-bold text-white mb-4">3 PDFs Estratégicos</h3>
+                            <ul className="space-y-2 text-gray-400 text-sm md:text-base">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-purple-500 font-bold">1.</span> Top 20 Perguntas & Respostas
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-purple-500 font-bold">2.</span> Checklist de Preparação em 30 Min.
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-purple-500 font-bold">3.</span> The Ultimate English Interview Kit
+                                </li>
+                            </ul>
                         </div>
                     </motion.div>
 
-                    {/* Item 2: Audio Pack (Wide Card) */}
+                    {/* Item 2: The App (Big Feature) */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="md:col-span-2 bg-neutral-900 rounded-3xl p-8 border border-white/10 relative overflow-hidden group hover:border-purple-500/50 transition-all"
+                        className="relative bg-neutral-900 rounded-3xl p-8 border border-white/10 overflow-hidden group hover:border-green-500/50 transition-all flex flex-col h-full"
                     >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/20 blur-[60px] rounded-full pointer-events-none" />
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/20 blur-[80px] rounded-full pointer-events-none" />
 
-                        <div className="flex flex-col md:flex-row items-center gap-8">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/20">
-                                <Headphones className="w-8 h-8 text-white" />
+                        <div className="flex-1 flex flex-col justify-center items-center mb-8">
+                            <div className="mb-6 relative group transform hover:scale-105 transition-transform duration-500">
+                                <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
+                                <Image
+                                    src="/images/Brown%20Elegant%20and%20Modern%20Podcast%20Playlist%20Facebook%20Post%20(2).jpg"
+                                    alt="App Scripts Blindados Preview"
+                                    width={300}
+                                    height={300}
+                                    className="relative w-auto h-64 md:h-72 object-contain rounded-xl shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-green-500/30"
+                                    unoptimized
+                                />
                             </div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Pack de Sotaques Reais</h3>
-                                <p className="text-gray-400">
-                                    Treine seu ouvido para entender indianos, americanos e europeus.
-                                </p>
-                            </div>
-                            {/* Visual Soundwave visualization */}
-                            <div className="hidden md:flex items-center gap-1 h-8 ml-auto opacity-50">
-                                {[...Array(10)].map((_, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className="w-1 bg-purple-500 rounded-full"
-                                        animate={{ height: [10, 32, 10] }}
-                                        transition={{
-                                            duration: 1,
-                                            repeat: Infinity,
-                                            delay: i * 0.1,
-                                            ease: "easeInOut"
-                                        }}
-                                    />
-                                ))}
+                            <div className="text-center space-y-2">
+                                <div className="inline-block px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/30">
+                                    TECNOLOGIA EXCLUSIVA
+                                </div>
                             </div>
                         </div>
-                    </motion.div>
 
-                    {/* Item 3: The App (Standard Card) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="md:col-span-1 bg-neutral-900 rounded-3xl p-8 border border-white/10 relative overflow-hidden group hover:border-purple-500/50 transition-all"
-                    >
-                        <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-green-500/10 to-transparent pointer-events-none" />
-                        <Smartphone className="w-10 h-10 text-green-400 mb-6" />
-                        <h3 className="text-xl font-bold text-white mb-3">App Scripts Blindados</h3>
-                        <p className="text-gray-400 text-sm">
-                            A ferramenta que monta suas respostas em minutos.
-                        </p>
-                    </motion.div>
-
-                    {/* Item 4: Mentorship Bonus (Standard Card Highlighted) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="md:col-span-1 bg-neutral-900 rounded-3xl p-8 border border-[#d4af37]/30 relative overflow-hidden group hover:bg-[#d4af37]/5 transition-all"
-                    >
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#d4af37]/20 blur-[50px] rounded-full pointer-events-none" />
-
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center">
-                                <MessageCircle className="w-5 h-5 text-[#d4af37]" />
-                            </div>
-                            <span className="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-2 py-1 rounded-full uppercase tracking-wider">
-                                Bônus Exclusivo
-                            </span>
+                        <div className="relative z-10 mt-auto">
+                            <h3 className="text-2xl font-bold text-white mb-4">App Scripts Blindados</h3>
+                            <p className="text-gray-400 leading-relaxed mb-6">
+                                A única ferramenta do mercado que monta suas respostas perfeitas em minutos. Basta preencher as lacunas e copiar.
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-2 text-sm text-gray-300">
+                                    <CheckCircle className="w-4 h-4 text-green-500" /> Modelos validados por recrutadores
+                                </li>
+                                <li className="flex items-center gap-2 text-sm text-gray-300">
+                                    <CheckCircle className="w-4 h-4 text-green-500" /> Funciona no celular e PC
+                                </li>
+                                <li className="flex items-center gap-2 text-sm text-gray-300">
+                                    <CheckCircle className="w-4 h-4 text-green-500" /> Acesso vitalício
+                                </li>
+                            </ul>
                         </div>
-
-                        <h3 className="text-xl font-bold text-white mb-3">Mentoria de Bolso</h3>
-                        <p className="text-gray-400 text-sm">
-                            A Teacher Patrícia no seu contato pessoal. Tire dúvidas reais.
-                        </p>
                     </motion.div>
 
                 </div>

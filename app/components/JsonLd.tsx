@@ -60,7 +60,7 @@ const JsonLd = () => {
                 },
                 "offers": {
                     "@type": "Offer",
-                    "price": "297.00",
+                    "price": "47.00",
                     "priceCurrency": "BRL",
                     "availability": "https://schema.org/InStock",
                     "url": "https://pay.kiwify.com.br/L0AzUvb",

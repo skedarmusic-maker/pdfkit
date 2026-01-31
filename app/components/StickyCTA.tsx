@@ -52,7 +52,7 @@ export default function StickyCTA() {
                             if (typeof window !== "undefined" && (window as any).gtag) {
                                 (window as any).gtag("event", "begin_checkout", {
                                     currency: "BRL",
-                                    value: 297.00,
+                                    value: 47.00,
                                     items: [{ item_name: "The Ultimate English Interview Kit" }]
                                 });
                             }

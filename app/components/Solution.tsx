@@ -29,7 +29,7 @@ export default function Solution() {
                                 <X className="w-6 h-6 text-red-500 shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-bold text-red-200">O Jeito Antigo (Errado)</h4>
-                                    <p className="text-sm text-gray-400">PDFs de 50 páginas genéricoss, listas de palavras soltas e aulas de gramática que não preparam para perguntas comportamentais.</p>
+                                    <p className="text-sm text-gray-400">PDFs longos e genéricos, listas de palavras soltas e aulas de gramática que não preparam para perguntas comportamentais.</p>
                                 </div>
                             </div>
 
@@ -76,7 +76,7 @@ export default function Solution() {
                                         Perguntas e respostas entrevista de emprego em inglês
                                     </h3>
                                     <p className="text-gray-400 text-sm pl-6 border-l-2 border-purple-500/20 group-hover:border-purple-500 transition-colors">
-                                        Acesse o banco de dados do Simulador com as 50 perguntas que os recrutadores de Big Techs realmente fazem.
+                                        Acesse o banco de dados do Simulador com as 20 perguntas que os recrutadores de Big Techs realmente fazem.
                                     </p>
                                 </div>
 

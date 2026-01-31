@@ -16,13 +16,13 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white selection:bg-purple-500 selection:text-white">
       <Hero />
       <TargetAudience />
-      <Storytelling />
-      <PreparationStrategy />
+      {/* <Storytelling /> */}
+      {/* <PreparationStrategy /> */}
       <Solution />
       <AppShowcase />
       <SocialProof />
       <Deliverables />
-      <TeacherBio />
+      {/* <TeacherBio /> */}
       <Offer />
       <FAQ />
 

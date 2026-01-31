@@ -6,23 +6,23 @@ import { AlertCircle, Frown, Users, Briefcase } from "lucide-react";
 const pains = [
     {
         icon: AlertCircle,
-        title: "Medo de Travar",
-        description: "Aquele branco na mente na hora H, mesmo sabendo a resposta em português.",
+        title: "O \"Branco\" na Hora H",
+        description: "Você entende a pergunta, sabe a resposta em português, mas a frase trava na garganta e o silêncio constrangedor domina a chamada.",
     },
     {
         icon: Users,
-        title: "Síndrome do Impostor",
-        description: "Sentir que não merece a vaga porque seu inglês não é 'nativo' ou perfeito.",
+        title: "Não saber se vender",
+        description: "O pavor de travar logo na primeira pergunta: \"Tell me about yourself\". Começar gaguejando destrói sua autoridade de sênior.",
     },
     {
         icon: Frown,
-        title: "Vergonha do Sotaque",
-        description: "Medo de ser julgado pela pronúncia e perder a credibilidade profissional.",
+        title: "Medo de Perguntas Surpresa",
+        description: "E se o recrutador sair do roteiro? Ou usar gírias? O medo de ter que pedir para repetir 3 vezes e parecer que não sabe inglês.",
     },
     {
         icon: Briefcase,
-        title: "Frustração Profissional",
-        description: "Perder vagas de R$ 15k+ (dólar/euro) não por falta de técnica, mas de confiança.",
+        title: "Ver gente pior passando",
+        description: "A frustração de ver profissionais com menos capacidade técnica que você conquistando a vaga em Dólar só porque 'desenrolaram' na entrevista.",
     },
 ];
 

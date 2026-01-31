@@ -1,12 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, Play, CheckCircle, Clock } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle, Clock, Download, Sparkles } from "lucide-react";
 import Image from "next/image";
 
+// Hero Images for Carousel
+const heroImages = [
+    "/images/Design sem nome (31).png",
+    "/images/O PROTOCOLO.png",
+    "/images/QA.png",
+    "/images/THE UTAMATE.png"
+];
+
 export default function Hero() {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Auto-advance carousel
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+        }, 3000); // 3 seconds per slide
+
+        return () => clearInterval(interval);
+    }, []);
 
     const scrollToOffer = () => {
         document.getElementById("offer")?.scrollIntoView({ behavior: "smooth" });
@@ -25,108 +42,110 @@ export default function Hero() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 mb-8 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900/50 to-purple-800/50 border border-purple-500/30 mb-8 backdrop-blur-sm shadow-[0_0_15px_rgba(168,85,247,0.2)] group cursor-default hover:border-purple-500/50 transition-colors"
                 >
-                    <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-sm font-medium text-purple-200">Vagas Internacionais Abertas Agora</span>
+                    <Sparkles className="w-4 h-4 text-yellow-400 group-hover:rotate-12 transition-transform" />
+                    <span className="text-sm font-semibold text-purple-100">
+                        Novo: Inclui <span className="text-yellow-400">App Gerador de Respostas</span>
+                    </span>
                 </motion.div>
 
-                {/* Headline - Mais Direto e "Dor" */}
+                {/* Headline */}
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-4xl md:text-6xl font-bold leading-tight mb-6 tracking-tight max-w-5xl"
                 >
-                    Passe na Entrevista em Inglês <br className="hidden md:block" />
+                    Não perca a vaga por não saber <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
-                        Mesmo Sem Ser Fluente
+                        o que responder em Inglês
                     </span>
                 </motion.h1>
 
-                {/* Subheadline Text - Conecta Medo + Solução + Público */}
+                {/* Subheadline */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-lg md:text-xl text-gray-300 mb-8 font-normal max-w-3xl"
                 >
-                    Respostas prontas, perguntas mais comuns e estrutura certa para entrevistas em <span className="text-white font-semibold">empresas internacionais, TI e Business.</span>
+                    Baixe agora os <span className="text-white font-bold">3 PDFs com Scripts Prontos</span> para as 20 perguntas mais comuns e use nosso <span className="text-white font-bold">App Gerador de Respostas</span> para treinar.
                 </motion.p>
 
-                {/* Video Component (VSL) */}
+                {/* Product Carousel (Replacing Static Image) */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="relative w-full max-w-4xl aspect-video bg-black rounded-xl shadow-2xl shadow-purple-900/20 overflow-hidden border border-white/10 mb-10 group"
-                    style={{ loading: "lazy" } as any}
+                    className="relative w-full max-w-[500px] h-[350px] md:h-[450px] mb-10 flex items-center justify-center p-2"
                 >
-                    {!isPlaying ? (
-                        <div
-                            className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                            onClick={() => setIsPlaying(true)}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentImageIndex}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5 }}
+                            className="absolute inset-0 w-full h-full flex items-center justify-center"
                         >
                             <Image
-                                src="https://vz-5af29887-36d.b-cdn.net/90b4a2ad-9a65-4179-8b32-69679527e1fa/thumbnail_9934a3ac.jpg"
-                                alt="Vídeo: Como destravar sua carreira internacional"
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                src={heroImages[currentImageIndex]}
+                                alt={`Kit Preview ${currentImageIndex + 1}`}
+                                width={500}
+                                height={600}
+                                className="w-auto h-full max-w-full drop-shadow-[0_0_50px_rgba(168,85,247,0.3)] object-contain"
                                 priority
                                 unoptimized
                             />
-                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+                        </motion.div>
+                    </AnimatePresence>
 
-                            {/* Play Button */}
-                            <div className="relative z-10 w-20 h-20 md:w-24 md:h-24 bg-purple-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.4)] group-hover:scale-110 transition-transform duration-300 pl-2">
-                                <Play className="w-10 h-10 md:w-12 md:h-12 text-white fill-white" />
-                            </div>
-                        </div>
-                    ) : (
-                        <iframe
-                            src="https://iframe.mediadelivery.net/embed/585415/90b4a2ad-9a65-4179-8b32-69679527e1fa?autoplay=true&preload=true"
-                            loading="lazy"
-                            className="absolute inset-0 w-full h-full border-0"
-                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                            allowFullScreen={true}
-                        />
-                    )}
+                    {/* Dots Indicator */}
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                        {heroImages.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`h-2 rounded-full transition-all duration-300 ${i === currentImageIndex ? "w-8 bg-purple-500" : "w-2 bg-white/20"}`}
+                            />
+                        ))}
+                    </div>
                 </motion.div>
 
-                {/* CTA Button & Urgency */}
+                {/* CTA Button */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col items-center gap-4"
+                    className="flex flex-col items-center gap-4 mt-8"
                 >
                     <button
                         onClick={scrollToOffer}
-                        className="group relative inline-flex items-center justify-center bg-purple-600 hover:bg-purple-500 text-white font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:-translate-y-1 transform"
+                        className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform"
                     >
-                        QUERO ME PREPARAR AGORA
-                        <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                        BAIXAR MEU KIT AGORA
+                        <Download className="ml-2 w-6 h-6 group-hover:translate-y-1 transition-transform" />
                     </button>
 
                     {/* Urgency Text */}
-                    <p className="text-red-400 font-medium text-sm md:text-base flex items-center gap-2 animate-pulse">
-                        <Clock className="w-4 h-4" />
-                        A entrevista acontece uma vez. A preparação não pode falhar.
+                    <p className="text-gray-400 font-medium text-sm md:text-base flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-purple-500" />
+                        Acesso liberado imediatamente após a compra.
                     </p>
 
-                    {/* Footer Social Proof - Reorganized */}
+                    {/* Footer Social Proof */}
                     <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mt-4">
                         <div className="flex items-center gap-1">
                             <CheckCircle className="w-4 h-4 text-purple-500" />
-                            <span>Acesso Imediato</span>
+                            <span>3 PDFs Exclusivos</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <CheckCircle className="w-4 h-4 text-purple-500" />
+                            <span>App Incluso</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <CheckCircle className="w-4 h-4 text-purple-500" />
                             <span>Garantia de 7 Dias</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <CheckCircle className="w-4 h-4 text-purple-500" />
-                            <span>Compra Segura</span>
                         </div>
                     </div>
                 </motion.div>
