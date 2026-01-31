@@ -1,33 +1,36 @@
-name: Deploy Interview Kit
+name: Deploy to Hostinger
+
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: 1. Checkout do Código
-        uses: actions/checkout@v3
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
 
-      - name: 2. Instalar e Compilar (Next.js)
-        run: |
-          npm install
-          npm run build
-          ls -R ./out/
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: 3. Deploy para Hostinger
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🏗️ Build Project
+        run: npm run build
+
+      - name: 📂 Sync with Hostinger (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: ./
-          protocol: ftps
-          security: loose
+          server-dir: ./public_html/
+          protocol: ftp
           port: 21
-          timeout: 300000
-          log-level: verbose
