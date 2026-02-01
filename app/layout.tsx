@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     title: "The Ultimate English Interview Kit",
     description: "Prepare-se para entrevistas em inglês em 10 minutos.",
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
