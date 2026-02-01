@@ -57,9 +57,9 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="text-4xl md:text-6xl font-bold leading-tight mb-6 tracking-tight max-w-5xl"
                 >
-                    Não perca a vaga por não saber <br className="hidden md:block" />
+                    Respostas prontas para entrevista em inglês <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
-                        o que responder em Inglês
+                        mesmo se você travar na hora
                     </span>
                 </motion.h1>
 
@@ -68,9 +68,17 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-lg md:text-xl text-gray-300 mb-8 font-normal max-w-3xl"
+                    className="text-lg md:text-xl text-gray-300 mb-4 font-normal max-w-3xl"
                 >
-                    Baixe agora os <span className="text-white font-bold">3 PDFs com Scripts Prontos</span> para as 20 perguntas mais comuns e use nosso <span className="text-white font-bold">App Gerador de Respostas</span> para treinar.
+                    Leia hoje, treine no app e vá para a entrevista sabendo exatamente o que dizer.
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="text-purple-300 font-bold text-lg md:text-xl mb-8 bg-purple-900/20 px-4 py-2 rounded-lg border border-purple-500/30 inline-block"
+                >
+                    "Você não precisa ser fluente. Precisa saber o que responder."
                 </motion.p>
 
                 {/* Product Carousel (Replacing Static Image) */}
@@ -123,7 +131,7 @@ export default function Hero() {
                         onClick={scrollToOffer}
                         className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform"
                     >
-                        BAIXAR MEU KIT AGORA
+                        QUERO MINHAS RESPOSTAS PRONTAS
                         <Download className="ml-2 w-6 h-6 group-hover:translate-y-1 transition-transform" />
                     </button>
 

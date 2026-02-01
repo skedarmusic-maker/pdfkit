@@ -30,7 +30,7 @@ export default function Deliverables() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        O que você vai <span className="text-purple-500">receber</span>
+                        O que você vai <span className="text-purple-500">conseguir</span>
                     </h2>
                     <p className="text-gray-400 text-lg">
                         O arsenal completo para garantir sua aprovação.
@@ -81,15 +81,18 @@ export default function Deliverables() {
                                 ))}
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4">3 PDFs Estratégicos</h3>
-                            <ul className="space-y-2 text-gray-400 text-sm md:text-base">
+                            <ul className="space-y-4 text-gray-400 text-sm md:text-base">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-purple-500 font-bold">1.</span> Top 20 Perguntas & Respostas
+                                    <CheckCircle className="w-5 h-5 text-purple-500 shrink-0" />
+                                    <span>Saiba responder as perguntas mais comuns</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-purple-500 font-bold">2.</span> Checklist de Preparação em 30 Min.
+                                    <CheckCircle className="w-5 h-5 text-purple-500 shrink-0" />
+                                    <span>Use respostas prontas em inglês profissional</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-purple-500 font-bold">3.</span> The Ultimate English Interview Kit
+                                    <CheckCircle className="w-5 h-5 text-purple-500 shrink-0" />
+                                    <span>Evite "branco" e ganhe confiança total</span>
                                 </li>
                             </ul>
                         </div>
@@ -129,15 +132,15 @@ export default function Deliverables() {
                             <p className="text-gray-400 leading-relaxed mb-6">
                                 A única ferramenta do mercado que monta suas respostas perfeitas em minutos. Basta preencher as lacunas e copiar.
                             </p>
-                            <ul className="space-y-2">
+                            <ul className="space-y-4">
                                 <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <CheckCircle className="w-4 h-4 text-green-500" /> Modelos validados por recrutadores
+                                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" /> Treine antes da entrevista no app
                                 </li>
                                 <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <CheckCircle className="w-4 h-4 text-green-500" /> Funciona no celular e PC
+                                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" /> Sem teoria, sem enrolação
                                 </li>
                                 <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <CheckCircle className="w-4 h-4 text-green-500" /> Acesso vitalício
+                                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" /> Segurança para falar com recrutadores
                                 </li>
                             </ul>
                         </div>

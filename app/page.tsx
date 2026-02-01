@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import WhatItIsNot from "./components/WhatItIsNot";
 import TargetAudience from "./components/TargetAudience";
 import Storytelling from "./components/Storytelling";
 import Solution from "./components/Solution";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-purple-500 selection:text-white">
       <Hero />
+      <WhatItIsNot />
       <TargetAudience />
       {/* <Storytelling /> */}
       {/* <PreparationStrategy /> */}
