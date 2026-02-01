@@ -13,8 +13,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kit.softenglish.com.br"),
-  title: "The Ultimate English Interview Kit | Domine sua Entrevista Internacional",
-  description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. O único método com App de Scripts Blindados.",
+  title: "Respostas Prontas para Entrevista em Inglês | The Ultimate Kit",
+  description: "O que responder na entrevista em inglês? Acesse scripts prontos, Método STAR e App Gerador de Respostas. Prepare-se em minutos.",
   verification: {
     google: "cqHXJbW7tHTrUSFgp69J2FJwrV7STU5DXsUF3-JPu3s",
   },
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "The Ultimate English Interview Kit",
-    description: "Prepare-se para entrevistas em inglês em 10 minutos. Sem decoreba, sem travar. Acesso imediato.",
+    title: "Respostas Prontas para Entrevista em Inglês",
+    description: "O que responder na entrevista em inglês? Acesse scripts prontos e prepare-se em minutos.",
     url: "https://kit.softenglish.com.br",
     siteName: "The Ultimate English Interview Kit",
     locale: "pt_BR",
