@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle, Clock, Download, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 // Hero Images for Carousel
@@ -127,12 +127,9 @@ export default function Hero() {
                 >
                     <a
                         href="https://pay.kiwify.com.br/HfQu60H?sck=hero"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform decoration-0"
                     >
-                        QUERO MINHAS RESPOSTAS PRONTAS
-                        <Download className="ml-2 w-6 h-6 group-hover:translate-y-1 transition-transform" />
+                        COMPRAR AGORA
                     </a>
 
                     {/* Urgency Text */}

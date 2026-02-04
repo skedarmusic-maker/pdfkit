@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lock, ArrowRight } from "lucide-react";
+import { Lock } from "lucide-react";
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false);
@@ -46,12 +46,9 @@ export default function StickyCTA() {
                 >
                     <a
                         href="https://pay.kiwify.com.br/HfQu60H?sck=sticky"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="relative z-10 w-full bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg py-3 px-6 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer decoration-0"
                     >
                         QUERO MINHAS RESPOSTAS PRONTAS
-                        <ArrowRight className="w-5 h-5" />
                     </a>
                     <div className="text-center mt-2">
                         <span className="text-[10px] text-gray-400 flex items-center justify-center gap-1">
