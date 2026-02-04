@@ -25,9 +25,7 @@ export default function Hero() {
         return () => clearInterval(interval);
     }, []);
 
-    const scrollToOffer = () => {
-        document.getElementById("offer")?.scrollIntoView({ behavior: "smooth" });
-    };
+
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 lg:pt-32">
@@ -127,13 +125,15 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-col items-center gap-4 mt-8"
                 >
-                    <button
-                        onClick={scrollToOffer}
-                        className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform"
+                    <a
+                        href="https://pay.kiwify.com.br/HfQu60H?sck=hero"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform decoration-0"
                     >
                         QUERO MINHAS RESPOSTAS PRONTAS
                         <Download className="ml-2 w-6 h-6 group-hover:translate-y-1 transition-transform" />
-                    </button>
+                    </a>
 
                     {/* Urgency Text */}
                     <p className="text-gray-400 font-medium text-sm md:text-base flex items-center gap-2">
