@@ -56,8 +56,8 @@ export default function AppShowcase() {
                                     </div>
                                     <div className="pt-4">
                                         <a
-                                            href="https://pay.kiwify.com.br/HfQu60H?sck=app_demo"
-                                            className="w-full h-12 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-bold transition-colors shadow-lg shadow-purple-900/20 flex items-center justify-center decoration-0"
+                                            href="https://pay.kiwify.com.br/HfQu60H?sck=offer"
+                                            className="w-full h-12 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-bold flex items-center justify-center decoration-0"
                                         >
                                             Gerar Script "Tell Me About Yourself"
                                         </a>

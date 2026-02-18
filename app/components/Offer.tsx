@@ -56,7 +56,7 @@ export default function Offer() {
 
                                 <a
                                     href="https://pay.kiwify.com.br/HfQu60H?sck=offer"
-                                    className="relative z-10 flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all transform hover:-translate-y-1 mb-6 cursor-pointer decoration-0"
+                                    className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg py-4 px-8 rounded-xl cursor-pointer decoration-0"
                                 >
                                     QUERO MINHAS RESPOSTAS PRONTAS
                                 </a>

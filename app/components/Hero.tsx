@@ -1,34 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle, Clock, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Clock, Sparkles, Lock } from "lucide-react";
 import Image from "next/image";
 
-// Hero Images for Carousel
-const heroImages = [
-    "/images/Design sem nome (31).png",
-    "/images/O PROTOCOLO.png",
-    "/images/QA.png",
-    "/images/THE UTAMATE.png"
-];
-
 export default function Hero() {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-    // Auto-advance carousel
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-        }, 3000); // 3 seconds per slide
-
-        return () => clearInterval(interval);
-    }, []);
-
-
-
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 lg:pt-32">
+        <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-12 pb-16 lg:pt-32">
             {/* Background Glows */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-900/10 blur-[100px] rounded-full pointer-events-none" />
@@ -40,7 +18,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900/50 to-purple-800/50 border border-purple-500/30 mb-8 backdrop-blur-sm shadow-[0_0_15px_rgba(168,85,247,0.2)] group cursor-default hover:border-purple-500/50 transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900/50 to-purple-800/50 border border-purple-500/30 mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(168,85,247,0.2)] group cursor-default hover:border-purple-500/50 transition-colors"
                 >
                     <Sparkles className="w-4 h-4 text-yellow-400 group-hover:rotate-12 transition-transform" />
                     <span className="text-sm font-semibold text-purple-100">
@@ -53,11 +31,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-4xl md:text-6xl font-bold leading-tight mb-6 tracking-tight max-w-5xl"
+                    className="text-4xl md:text-6xl font-bold leading-tight mb-4 tracking-tight max-w-5xl"
                 >
-                    Respostas prontas para entrevista em inglês <br className="hidden md:block" />
+                    Passe na entrevista em inglês <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
-                        mesmo se você travar na hora
+                        mesmo sem ser fluente
                     </span>
                 </motion.h1>
 
@@ -68,92 +46,111 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-lg md:text-xl text-gray-300 mb-4 font-normal max-w-3xl"
                 >
-                    Leia hoje, treine no app e vá para a entrevista sabendo exatamente o que dizer.
+                    Use respostas prontas testadas + app para treinar antes da entrevista.
                 </motion.p>
-                <motion.p
+                {/* Benefits Bullets */}
+                <motion.ul
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="text-purple-300 font-bold text-lg md:text-xl mb-8 bg-purple-900/20 px-4 py-2 rounded-lg border border-purple-500/30 inline-block"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-gray-300 text-sm md:text-base mb-6 justify-center max-w-2xl mx-auto"
                 >
-                    "Você não precisa ser fluente. Precisa saber o que responder."
-                </motion.p>
+                    <li className="flex items-center gap-2 text-left md:text-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                        <span>Respostas prontas para perguntas reais</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-left md:text-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                        <span>Estrutura pronta para copiar e adaptar</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-left md:text-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                        <span>Treine no app antes da entrevista</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-left md:text-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                        <span>Preparação em menos de 10 minutos</span>
+                    </li>
+                </motion.ul>
 
-                {/* Product Carousel (Replacing Static Image) */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="relative w-full max-w-[500px] h-[350px] md:h-[450px] mb-10 flex items-center justify-center p-2"
-                >
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={currentImageIndex}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            transition={{ duration: 0.5 }}
-                            className="absolute inset-0 w-full h-full flex items-center justify-center"
-                        >
-                            <Image
-                                src={heroImages[currentImageIndex]}
-                                alt={`Kit Preview ${currentImageIndex + 1}`}
-                                width={500}
-                                height={600}
-                                className="w-auto h-full max-w-full drop-shadow-[0_0_50px_rgba(168,85,247,0.3)] object-contain"
-                                priority
-                                unoptimized
-                            />
-                        </motion.div>
-                    </AnimatePresence>
-
-                    {/* Dots Indicator */}
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                        {heroImages.map((_, i) => (
-                            <div
-                                key={i}
-                                className={`h-2 rounded-full transition-all duration-300 ${i === currentImageIndex ? "w-8 bg-purple-500" : "w-2 bg-white/20"}`}
-                            />
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* CTA Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col items-center gap-4 mt-8"
-                >
+                {/* CTA Button (Moved Up) */}
+                <div className="flex flex-col items-center gap-3 mb-8 w-full">
                     <a
-                        href="https://pay.kiwify.com.br/HfQu60H?sck=hero"
-                        className="group relative inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-5 px-12 rounded-full transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] hover:-translate-y-1 transform decoration-0"
+                        href="https://pay.kiwify.com.br/HfQu60H?sck=offer"
+                        className="inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-black font-extrabold text-lg md:text-xl py-6 px-12 rounded-full decoration-0 w-full md:w-auto"
                     >
                         COMPRAR AGORA
                     </a>
 
-                    {/* Urgency Text */}
-                    <p className="text-gray-400 font-medium text-sm md:text-base flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-purple-500" />
-                        Acesso liberado imediatamente após a compra.
+                    {/* Microcopy */}
+                    <p className="text-gray-500 text-xs md:text-sm font-medium flex items-center justify-center gap-2">
+                        <Lock className="w-3 h-3" />
+                        Acesso imediato • Garantia 7 dias • Pix / Boleto / Cartão
                     </p>
+                </div>
 
-                    {/* Footer Social Proof */}
-                    <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mt-4">
-                        <div className="flex items-center gap-1">
-                            <CheckCircle className="w-4 h-4 text-purple-500" />
-                            <span>3 PDFs Exclusivos</span>
+
+                {/* Real Example Cards (Secondary Content) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="w-full max-w-4xl mb-8 opacity-90 hover:opacity-100 transition-opacity"
+                >
+                    <div className="flex flex-col items-center mb-6">
+                        <span className="text-gray-400 font-medium text-sm md:text-base border-b border-gray-700 pb-1 cursor-default">
+                            EXEMPLO REAL (copie e use) ↓
+                        </span>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6 text-left">
+                        {/* Card 1 */}
+                        <div className="bg-white/5 border border-white/10 rounded-xl p-6 transition-colors">
+                            <div className="mb-4">
+                                <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">Pergunta</span>
+                                <h3 className="text-white font-bold text-lg mt-1">"Tell me about yourself."</h3>
+                            </div>
+                            <div className="mb-4">
+                                <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Resposta pronta</span>
+                                <p className="text-white/90 text-sm leading-loose bg-black/40 p-4 rounded-lg border border-white/5 font-mono mt-1">
+                                    "I’m a <span className="text-white bg-white/20 px-1 rounded">[role]</span> with <span className="text-white bg-white/20 px-1 rounded">[X]</span> years of experience in <span className="text-white bg-white/20 px-1 rounded">[area]</span>. Recently, I worked on <span className="text-white bg-white/20 px-1 rounded">[project]</span>, where I achieved <span className="text-white bg-white/20 px-1 rounded">[result]</span>. I’m now looking for a role where I can contribute with <span className="text-white bg-white/20 px-1 rounded">[skill]</span> and keep growing."
+                                </p>
+                            </div>
+                            <p className="text-xs text-gray-500 flex items-center gap-1">
+                                <Sparkles className="w-3 h-3 text-yellow-500 shrink-0" />
+                                Dica: troque [termos] pela sua experiência
+                            </p>
                         </div>
-                        <div className="flex items-center gap-1">
-                            <CheckCircle className="w-4 h-4 text-purple-500" />
-                            <span>App Incluso</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <CheckCircle className="w-4 h-4 text-purple-500" />
-                            <span>Garantia de 7 Dias</span>
+
+                        {/* Card 2 */}
+                        <div className="bg-white/5 border border-white/10 rounded-xl p-6 transition-colors">
+                            <div className="mb-4">
+                                <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">Pergunta</span>
+                                <h3 className="text-white font-bold text-lg mt-1">"Why should we hire you?"</h3>
+                            </div>
+                            <div className="mb-4">
+                                <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Resposta pronta</span>
+                                <p className="text-white/90 text-sm leading-loose bg-black/40 p-4 rounded-lg border border-white/5 font-mono mt-1">
+                                    "You should hire me because I bring <span className="text-white bg-white/20 px-1 rounded">[strength 1]</span> and <span className="text-white bg-white/20 px-1 rounded">[strength 2]</span>. In my last role, I improved <span className="text-white bg-white/10 px-1 rounded">[process/metric]</span> by <span className="text-white bg-white/10 px-1 rounded">[result]</span>. I’m proactive, communicate clearly, and I’m ready to add value quickly."
+                                </p>
+                            </div>
+                            <p className="text-xs text-gray-500 flex items-center gap-1">
+                                <Sparkles className="w-3 h-3 text-yellow-500 shrink-0" />
+                                Dica: troque [termos] pela sua experiência
+                            </p>
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Highlight Quote (Moved to bottom) */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    className="text-purple-300 font-bold text-lg md:text-xl mb-8 bg-purple-900/20 px-4 py-2 rounded-lg border border-purple-500/30 inline-block"
+                >
+                    "Você não precisa ser fluente. Precisa saber o que responder."
+                </motion.p>
 
             </div>
         </section>
