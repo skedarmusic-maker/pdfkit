@@ -33,20 +33,39 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="text-4xl md:text-6xl font-bold leading-tight mb-4 tracking-tight max-w-5xl"
                 >
-                    Passe na entrevista em inglês <br className="hidden md:block" />
+                    Roteiros PRONTOS para responder <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
-                        mesmo sem ser fluente
+                        entrevistas em inglês
+                    </span>
+                    <br className="hidden md:block" />
+                    <span className="text-2xl md:text-3xl text-gray-300 block mt-2 font-normal">
+                        (mesmo sem ser fluente)
                     </span>
                 </motion.h1>
+
+                {/* New Badge - Warning */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-yellow-500/10 border border-yellow-500/30 mb-6 backdrop-blur-sm"
+                >
+                    <span className="text-xs md:text-sm font-bold text-yellow-400 uppercase tracking-wide">
+                        ⚠️ NÃO é curso de inglês
+                    </span>
+                    <span className="text-xs md:text-sm text-gray-300">
+                        — são respostas prontas para usar.
+                    </span>
+                </motion.div>
 
                 {/* Subheadline */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-lg md:text-xl text-gray-300 mb-4 font-normal max-w-3xl"
+                    className="text-lg md:text-xl text-gray-300 mb-6 font-normal max-w-3xl"
                 >
-                    Use respostas prontas testadas + app para treinar antes da entrevista.
+                    Copie respostas profissionais já estruturadas e vá para entrevista sabendo exatamente o que falar.
                 </motion.p>
                 {/* Benefits Bullets */}
                 <motion.ul
@@ -57,15 +76,15 @@ export default function Hero() {
                 >
                     <li className="flex items-center gap-2 text-left md:text-center">
                         <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
-                        <span>Respostas prontas para perguntas reais</span>
+                        <span>Respostas reais usadas em entrevistas</span>
                     </li>
                     <li className="flex items-center gap-2 text-left md:text-center">
                         <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
-                        <span>Estrutura pronta para copiar e adaptar</span>
+                        <span>Estrutura pronta (copiar e adaptar)</span>
                     </li>
                     <li className="flex items-center gap-2 text-left md:text-center">
                         <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
-                        <span>Treine no app antes da entrevista</span>
+                        <span>App para treinar antes da entrevista</span>
                     </li>
                     <li className="flex items-center gap-2 text-left md:text-center">
                         <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
